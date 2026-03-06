@@ -16,8 +16,8 @@ interface ButtonProps {
     className = ''
   }: ButtonProps) {
     const variants = {
-      primary: 'bg-primary hover:bg-primary/90 text-white',
-      secondary: 'border border-border text-gray-400 hover:text-white hover:border-white',
+      primary: 'bg-primary hover:bg-primary/90 text-text',
+      secondary: 'border border-border text-text-muted hover:text-text hover:border-white',
       danger: 'border border-red-400/30 text-red-400 hover:border-red-300 hover:text-red-300',
     };
   

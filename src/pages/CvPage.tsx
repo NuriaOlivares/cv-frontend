@@ -10,11 +10,16 @@ import SkillsSection from '../components/cv/SkillsSection';
 import ProjectsSection from '../components/cv/ProjectSection';
 import EducationSection from '../components/cv/EducationSection';
 import ChatWidget from '../components/cv/ChatWidget';
+import ContactSection from '../components/cv/ContactSection';
+import { useTheme } from '../context/ThemeContext';
+import { Moon, Sun } from 'lucide-react';
 
 export default function CvPage() {
   const { profile, isLoading, error } = useProfile();
   const { isAdmin, logout } = useAuth();
   const navigate = useNavigate();
+
+  const { theme, toggleTheme } = useTheme();
 
   const handleLogout = async () => {
     await logout();
@@ -34,11 +39,11 @@ export default function CvPage() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-white">
+    <div className="min-h-screen bg-background text-text">
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-sm text-gray-400 font-mono">nuria.dev</span>
+          <span className="text-sm text-text-muted font-mono">nuria.dev</span>
           <div className="flex items-center gap-4">
             {isAdmin && (
               <button
@@ -49,14 +54,20 @@ export default function CvPage() {
               </button>
             )}
             <button
+              onClick={toggleTheme}
+              className="text-text-muted hover:text-text transition-colors"
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            <button
               onClick={() => cvApi.downloadCv()}
-              className="text-sm bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors"
+              className="text-sm bg-primary hover:bg-primary/90 text-text px-4 py-2 rounded-lg transition-colors"
             >
               Download CV
             </button>
             <button
               onClick={handleLogout}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+              className="text-sm text-text-muted hover:text-text transition-colors"
             >
               Logout
             </button>
@@ -115,6 +126,13 @@ export default function CvPage() {
             certifications={profile.certifications}
             languages={profile.languages}
           />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <ContactSection />
         </motion.div>
       </main>
 

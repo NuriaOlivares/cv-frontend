@@ -37,65 +37,65 @@ export default function ExperienceForm({ initial, onSaved, onCancel }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-surface border border-border rounded-xl p-6 space-y-4">
-      <h3 className="font-semibold text-white">{initial ? 'Edit' : 'Add'} Experience</h3>
+      <h3 className="font-semibold text-text">{initial ? 'Edit' : 'Add'} Experience</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Role *</label>
+          <label className="block text-xs text-text-muted mb-1">Role *</label>
           <input
             value={form.role}
             onChange={(e) => setForm({ ...form, role: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
             required
           />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Company *</label>
+          <label className="block text-xs text-text-muted mb-1">Company *</label>
           <input
             value={form.company}
             onChange={(e) => setForm({ ...form, company: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
             required
           />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Start Date *</label>
+          <label className="block text-xs text-text-muted mb-1">Start Date *</label>
           <input
             type="date"
             value={form.startDate}
             onChange={(e) => setForm({ ...form, startDate: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
             required
           />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">End Date (leave empty if current)</label>
+          <label className="block text-xs text-text-muted mb-1">End Date (leave empty if current)</label>
           <input
             type="date"
             value={form.endDate}
             onChange={(e) => setForm({ ...form, endDate: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Description</label>
+        <label className="block text-xs text-text-muted mb-1">Description</label>
         <textarea
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
           rows={4}
-          className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors resize-none"
+          className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors resize-none"
         />
       </div>
 
       <div className="flex gap-3 justify-end">
         <button type="button" onClick={onCancel}
-          className="text-sm text-gray-400 hover:text-white border border-border px-4 py-2 rounded-lg transition-colors">
+          className="text-sm text-text-muted hover:text-text border border-border px-4 py-2 rounded-lg transition-colors">
           Cancel
         </button>
         <button type="submit" disabled={isLoading}
-          className="text-sm bg-primary hover:bg-primary/90 disabled:opacity-50 text-white px-4 py-2 rounded-lg transition-colors">
+          className="text-sm bg-primary hover:bg-primary/90 disabled:opacity-50 text-text px-4 py-2 rounded-lg transition-colors">
           {isLoading ? 'Saving...' : 'Save'}
         </button>
       </div>

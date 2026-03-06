@@ -55,10 +55,10 @@ export default function ChatWidget() {
             <div className="flex items-center justify-between px-4 py-3 border-b border-border">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-sm font-medium text-white">Ask about Nuria</span>
+                <span className="text-sm font-medium text-text">Ask about Nuria</span>
               </div>
               <button onClick={() => setIsOpen(false)}
-                className="text-gray-500 hover:text-white transition-colors">
+                className="text-gray-500 hover:text-text transition-colors">
                 <X size={16} />
               </button>
             </div>
@@ -68,8 +68,8 @@ export default function ChatWidget() {
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] text-sm px-3 py-2 rounded-xl leading-relaxed ${
                     msg.role === 'user'
-                      ? 'bg-primary text-white rounded-br-sm'
-                      : 'bg-background text-gray-300 rounded-bl-sm'
+                      ? 'bg-primary text-text rounded-br-sm'
+                      : 'bg-background text-text-muted rounded-bl-sm'
                   }`}>
                     {msg.content}
                   </div>
@@ -95,12 +95,12 @@ export default function ChatWidget() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask something..."
-                className="flex-1 bg-background border border-border rounded-lg px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary transition-colors"
+                className="flex-1 bg-background border border-border rounded-lg px-3 py-2 text-sm text-text placeholder-gray-600 focus:outline-none focus:border-primary transition-colors"
               />
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isLoading}
-                className="bg-primary hover:bg-primary/90 disabled:opacity-50 text-white p-2 rounded-lg transition-colors"
+                className="bg-primary hover:bg-primary/90 disabled:opacity-50 text-text p-2 rounded-lg transition-colors"
               >
                 <Send size={16} />
               </button>
@@ -113,7 +113,7 @@ export default function ChatWidget() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-primary hover:bg-primary/90 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors"
+        className="bg-primary hover:bg-primary/90 text-text w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors"
       >
         <AnimatePresence mode="wait">
           {isOpen

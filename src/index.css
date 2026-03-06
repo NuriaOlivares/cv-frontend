@@ -4,8 +4,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #ffffff;
+  --text-muted: #9ca3af;
+}
+
+:root:not(.dark) {
+  --bg: #f8f8f8;
+  --surface: #ffffff;
+  --border: #e5e5e5;
+  --text: #0f0f0f;
+  --text-muted: #6b7280;
+}
+
 body {
-  background-color: #0f0f0f;
-  color: #ffffff;
   font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }

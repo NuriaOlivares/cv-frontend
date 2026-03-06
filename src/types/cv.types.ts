@@ -98,3 +98,9 @@ export interface ChatMessage {
     role: 'user' | 'assistant';
     content: string;
 }
+
+export interface ContactForm {
+    name: string;
+    email: string;
+    message: string;
+}

@@ -37,63 +37,63 @@ export default function ProjectForm({ initial, onSaved, onCancel }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-surface border border-border rounded-xl p-6 space-y-4">
-      <h3 className="font-semibold text-white">{initial ? 'Edit' : 'Add'} Project</h3>
+      <h3 className="font-semibold text-text">{initial ? 'Edit' : 'Add'} Project</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Name *</label>
+          <label className="block text-xs text-text-muted mb-1">Name *</label>
           <input
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
             required
           />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Tech Stack (comma separated)</label>
+          <label className="block text-xs text-text-muted mb-1">Tech Stack (comma separated)</label>
           <input
             value={form.techStack}
             onChange={(e) => setForm({ ...form, techStack: e.target.value })}
             placeholder="Java, Spring Boot, React"
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
           />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">GitHub URL</label>
+          <label className="block text-xs text-text-muted mb-1">GitHub URL</label>
           <input
             value={form.githubUrl}
             onChange={(e) => setForm({ ...form, githubUrl: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
           />
         </div>
         <div>
-          <label className="block text-xs text-gray-400 mb-1">Live URL</label>
+          <label className="block text-xs text-text-muted mb-1">Live URL</label>
           <input
             value={form.url}
             onChange={(e) => setForm({ ...form, url: e.target.value })}
-            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Description *</label>
+        <label className="block text-xs text-text-muted mb-1">Description *</label>
         <textarea
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
           rows={4}
-          className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary transition-colors resize-none"
+          className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm text-text focus:outline-none focus:border-primary transition-colors resize-none"
           required
         />
       </div>
 
       <div className="flex gap-3 justify-end">
         <button type="button" onClick={onCancel}
-          className="text-sm text-gray-400 hover:text-white border border-border px-4 py-2 rounded-lg transition-colors">
+          className="text-sm text-text-muted hover:text-text border border-border px-4 py-2 rounded-lg transition-colors">
           Cancel
         </button>
         <button type="submit" disabled={isLoading}
-          className="text-sm bg-primary hover:bg-primary/90 disabled:opacity-50 text-white px-4 py-2 rounded-lg transition-colors">
+          className="text-sm bg-primary hover:bg-primary/90 disabled:opacity-50 text-text px-4 py-2 rounded-lg transition-colors">
           {isLoading ? 'Saving...' : 'Save'}
         </button>
       </div>

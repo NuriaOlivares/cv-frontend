@@ -12,7 +12,7 @@ export default function SkillsSection({ skills }: { skills: Skill[] }) {
 
   return (
     <section>
-      <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+      <h2 className="text-lg font-semibold text-text mb-6 flex items-center gap-2">
         <span className="w-8 h-px bg-primary inline-block" />
         Skills
       </h2>
@@ -25,7 +25,7 @@ export default function SkillsSection({ skills }: { skills: Skill[] }) {
               {skills.map((skill) => (
                 <span
                   key={skill.id}
-                  className="bg-surface border border-border text-gray-300 text-sm px-3 py-1 rounded-full hover:border-primary hover:text-white transition-colors"
+                  className="bg-surface border border-border text-text-muted text-sm px-3 py-1 rounded-full hover:border-primary hover:text-text transition-colors"
                 >
                   {skill.name}
                 </span>

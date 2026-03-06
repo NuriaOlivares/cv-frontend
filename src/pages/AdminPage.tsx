@@ -56,20 +56,20 @@ export default function AdminPage() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-white">
+    <div className="min-h-screen bg-background text-text">
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+            className="flex items-center gap-2 text-text-muted hover:text-text transition-colors text-sm"
           >
             <ArrowLeft size={16} />
             Back to CV
           </button>
           <button
             onClick={handleLogout}
-            className="text-sm text-gray-400 hover:text-white transition-colors"
+            className="text-sm text-text-muted hover:text-text transition-colors"
           >
             Logout
           </button>
@@ -79,8 +79,8 @@ export default function AdminPage() {
       <main className="max-w-4xl mx-auto px-6 pt-24 pb-16">
 
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white">Admin Panel</h1>
-          <p className="text-gray-400 mt-1">Manage your CV content</p>
+          <h1 className="text-3xl font-bold text-text">Admin Panel</h1>
+          <p className="text-text-muted mt-1">Manage your CV content</p>
         </div>
 
         <div className="flex gap-1 bg-surface border border-border rounded-xl p-1 mb-8 w-fit">
@@ -90,8 +90,8 @@ export default function AdminPage() {
               onClick={() => { setActiveTab(tab.key); setShowForm(false); setEditingItem(null); }}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 activeTab === tab.key
-                  ? 'bg-primary text-white'
-                  : 'text-gray-400 hover:text-white'
+                  ? 'bg-primary text-text'
+                  : 'text-text-muted hover:text-text'
               }`}
             >
               {tab.label}
@@ -102,7 +102,7 @@ export default function AdminPage() {
         {!showForm && (
           <button
             onClick={() => { setShowForm(true); setEditingItem(null); }}
-            className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors mb-6"
+            className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-text px-4 py-2 rounded-lg text-sm font-medium transition-colors mb-6"
           >
             <Plus size={16} />
             Add {activeTab === 'experiences' ? 'Experience' : activeTab === 'projects' ? 'Project' : 'Skill'}
@@ -143,13 +143,13 @@ export default function AdminPage() {
           {activeTab === 'experiences' && profile?.experiences.map((exp) => (
             <div key={exp.id} className="bg-surface border border-border rounded-xl p-4 flex justify-between items-start">
               <div>
-                <p className="font-medium text-white">{exp.role}</p>
+                <p className="font-medium text-text">{exp.role}</p>
                 <p className="text-primary text-sm">{exp.company}</p>
               </div>
               <div className="flex gap-2">
                 <button
                   onClick={() => { setEditingItem(exp); setShowForm(true); }}
-                  className="text-xs text-gray-400 hover:text-white border border-border hover:border-white px-3 py-1 rounded-lg transition-colors"
+                  className="text-xs text-text-muted hover:text-text border border-border hover:border-white px-3 py-1 rounded-lg transition-colors"
                 >
                   Edit
                 </button>
@@ -166,13 +166,13 @@ export default function AdminPage() {
           {activeTab === 'projects' && profile?.projects.map((proj) => (
             <div key={proj.id} className="bg-surface border border-border rounded-xl p-4 flex justify-between items-start">
               <div>
-                <p className="font-medium text-white">{proj.name}</p>
-                <p className="text-gray-400 text-sm line-clamp-1">{proj.description}</p>
+                <p className="font-medium text-text">{proj.name}</p>
+                <p className="text-text-muted text-sm line-clamp-1">{proj.description}</p>
               </div>
               <div className="flex gap-2">
                 <button
                   onClick={() => { setEditingItem(proj); setShowForm(true); }}
-                  className="text-xs text-gray-400 hover:text-white border border-border hover:border-white px-3 py-1 rounded-lg transition-colors"
+                  className="text-xs text-text-muted hover:text-text border border-border hover:border-white px-3 py-1 rounded-lg transition-colors"
                 >
                   Edit
                 </button>
@@ -189,13 +189,13 @@ export default function AdminPage() {
           {activeTab === 'skills' && profile?.skills.map((skill) => (
             <div key={skill.id} className="bg-surface border border-border rounded-xl p-4 flex justify-between items-center">
               <div>
-                <p className="font-medium text-white">{skill.name}</p>
-                <p className="text-gray-400 text-sm">{skill.categoryDisplayName}</p>
+                <p className="font-medium text-text">{skill.name}</p>
+                <p className="text-text-muted text-sm">{skill.categoryDisplayName}</p>
               </div>
               <div className="flex gap-2">
                 <button
                   onClick={() => { setEditingItem(skill); setShowForm(true); }}
-                  className="text-xs text-gray-400 hover:text-white border border-border hover:border-white px-3 py-1 rounded-lg transition-colors"
+                  className="text-xs text-text-muted hover:text-text border border-border hover:border-white px-3 py-1 rounded-lg transition-colors"
                 >
                   Edit
                 </button>

@@ -34,12 +34,12 @@ export default function LoginPage() {
         className="w-full max-w-md"
       >
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Nuria Olivares</h1>
-          <p className="text-gray-400">Senior Software Engineer</p>
+          <h1 className="text-3xl font-bold text-text mb-2">Nuria Olivares</h1>
+          <p className="text-text-muted">Senior Software Engineer</p>
         </div>
 
         <div className="bg-surface border border-border rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-white mb-6">Sign in</h2>
+          <h2 className="text-xl font-semibold text-text mb-6">Sign in</h2>
 
           <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 mb-6">
             <p className="text-sm text-primary">
@@ -49,24 +49,24 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-1">Username</label>
+              <label className="block text-sm text-text-muted mb-1">Username</label>
               <input
                 type="text"
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
-                className="w-full bg-background border border-border rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-background border border-border rounded-lg px-4 py-3 text-text placeholder-gray-600 focus:outline-none focus:border-primary transition-colors"
                 placeholder="Enter your username"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm text-gray-400 mb-1">Password</label>
+              <label className="block text-sm text-text-muted mb-1">Password</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-background border border-border rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-background border border-border rounded-lg px-4 py-3 text-text placeholder-gray-600 focus:outline-none focus:border-primary transition-colors"
                 placeholder="Enter your password"
                 required
               />
@@ -85,7 +85,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-semibold py-3 rounded-lg transition-colors"
+              className="w-full bg-primary hover:bg-primary/90 disabled:opacity-50 text-text font-semibold py-3 rounded-lg transition-colors"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center gap-2">

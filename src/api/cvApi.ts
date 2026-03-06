@@ -1,4 +1,4 @@
-import type { Certification, Education, Experience, Language, Profile, Project, Skill } from "../types/cv.types";
+import type { Certification, ContactForm, Education, Experience, Language, Profile, Project, Skill } from "../types/cv.types";
 import { api } from "./axiosConfig";
 
 
@@ -112,4 +112,8 @@ export const cvApi = {
         const response = await api.post<{ message: string }>('/api/chat', { message });
         return response.data.message;
     },
+
+    contactForm: async (form: ContactForm): Promise<void> => {
+        await api.post('/api/contact', form);
+    }
 }

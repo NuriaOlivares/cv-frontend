@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, PhoneCall } from 'lucide-react';
 import type { Profile } from '../../types/cv.types';
 
 export default function Hero({ profile }: { profile: Profile }) {
@@ -13,6 +13,13 @@ export default function Hero({ profile }: { profile: Profile }) {
             className="flex items-center gap-2 text-text-muted hover:text-text transition-colors text-sm">
             <Mail size={16} />
             {profile.email}
+          </a>
+        )}
+        {profile.phone && (
+          <a href={`tel:${profile.secondaryPhone}`}
+            className="flex items-center gap-2 text-text-muted hover:text-text transition-colors text-sm">
+            <PhoneCall size={16} />
+            {profile.phone}
           </a>
         )}
         {profile.phone && (

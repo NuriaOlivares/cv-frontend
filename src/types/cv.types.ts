@@ -5,6 +5,7 @@ export interface Profile {
     summary: string;
     email: string;
     phone?: string;
+    secondaryPhone?: string;
     linkedin?: string;
     github?: string;
     experiences: Experience[];

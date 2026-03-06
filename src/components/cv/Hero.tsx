@@ -15,11 +15,11 @@ export default function Hero({ profile }: { profile: Profile }) {
             {profile.email}
           </a>
         )}
-        {profile.phone && (
+        {profile.secondaryPhone && (
           <a href={`tel:${profile.secondaryPhone}`}
             className="flex items-center gap-2 text-text-muted hover:text-text transition-colors text-sm">
             <PhoneCall size={16} />
-            {profile.phone}
+            {profile.secondaryPhone}
           </a>
         )}
         {profile.phone && (
